@@ -11,7 +11,7 @@ for line in reader(sys.stdin):
         price = float(line[9])
     except:
         continue
-    var = size * var / (size + 1) + size * ((mean - 1) / (size + 1)) **2
+    var = size * var / (size + 1) + size * ((mean - price) / (size + 1)) **2
     mean = (size * mean + price) / (size + 1)
     size += 1
 print(size, mean, var, sep = '\t')
