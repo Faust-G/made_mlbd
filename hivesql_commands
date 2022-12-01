@@ -1,0 +1,18 @@
+CREATE EXTERNAL TABLE mlbd_artists(mbid STRING, artist_mb STRING, artist_lastfm STRING, country_mb STRING, country_lastfm STRING, tags_mb STRING, tags_lastfm STRING, listeners_lastfm BIGINT, scrobbles_lastfm BIGINT, ambiguous_artist STRING) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LOCATION '/mlbd' TBLPROPERTIES ("skip.header.line.count"="1");
+
+SELECT scrobbles_lastfm FROM
+(SELECT * FROM mlbd_artists WHERE scrobbles_lastfm IS NOT NULL) AS data
+ORDER BY scrobbles_lastfm DESC LIMIT 1;
+517126254
+
+SELECT x, count(x) as num FROM (SELECT explode(split(tags_lastfm,'; ')) as x FROM
+(SELECT tags_lastfm FROM mlbd_artists WHERE tags_lastfm IS NOT NULL) as n) as data GROUP BY x
+ORDER BY num DESC
+seen live
+
+DROP TABLE var;
+create table var as
+SELECT x, count(x) as num FROM (SELECT explode(split(tags_lastfm,'; ')) as x FROM
+(SELECT tags_lastfm FROM mlbd_artists WHERE tags_lastfm IS NOT NULL) as n) as data GROUP BY x
+ORDER BY num DESC LIMIT 1, 10;
+SELECT * from var
