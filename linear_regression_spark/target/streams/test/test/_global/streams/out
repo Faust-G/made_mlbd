@@ -1,0 +1,32 @@
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(org.apache.spark.ml.made.StartSparkTest, org.scalatest.tools.Framework$$anon$1@5d640b0, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(org.apache.spark.ml.made.StandardScalerTest, org.scalatest.tools.Framework$$anon$1@5d640b0, false, [SuiteSelector])[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mStartSparkTest:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mSpark[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[33m- should start context !!! IGNORED !!![0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mStandardScalerTest:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mModel[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31morg.apache.spark.ml.made.StandardScalerTest *** ABORTED ***[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  java.lang.ExceptionInInitializerError:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at org.apache.spark.unsafe.array.ByteArrayMethods.<clinit>(ByteArrayMethods.java:54)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at org.apache.spark.internal.config.package$.<init>(package.scala:1006)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at org.apache.spark.internal.config.package$.<clinit>(package.scala)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at org.apache.spark.SparkConf$.<init>(SparkConf.scala:639)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at org.apache.spark.SparkConf$.<clinit>(SparkConf.scala)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at org.apache.spark.SparkConf.set(SparkConf.scala:94)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at org.apache.spark.SparkConf.set(SparkConf.scala:83)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at org.apache.spark.sql.SparkSession$Builder.$anonfun$getOrCreate$1(SparkSession.scala:905)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.mutable.HashMap.$anonfun$foreach$1(HashMap.scala:149)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.mutable.HashTable.foreachEntry(HashTable.scala:237)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  ...[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  Cause: java.lang.reflect.InaccessibleObjectException: Unable to make private java.nio.DirectByteBuffer(long,int) accessible: module java.base does not "opens java.nio" to unnamed module @34c0e1cf[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at java.base/java.lang.reflect.AccessibleObject.throwInaccessibleObjectException(AccessibleObject.java:387)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:363)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:311)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at java.base/java.lang.reflect.Constructor.checkCanSetAccessible(Constructor.java:192)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at java.base/java.lang.reflect.Constructor.setAccessible(Constructor.java:185)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at org.apache.spark.unsafe.Platform.<clinit>(Platform.java:56)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at org.apache.spark.unsafe.array.ByteArrayMethods.<clinit>(ByteArrayMethods.java:54)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at org.apache.spark.internal.config.package$.<init>(package.scala:1006)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at org.apache.spark.internal.config.package$.<clinit>(package.scala)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at org.apache.spark.SparkConf$.<init>(SparkConf.scala:639)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  ...[0m[0m
